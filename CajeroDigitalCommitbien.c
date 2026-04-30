@@ -22,6 +22,45 @@ struct Usuario usuarios[] = {
 int NumDeUsuarios = 4;
 int usuarioActual = -1;
 
+void autenticacion(){
+    printf("Por favor, autentiquese para continuar.\n\n");
+
+    char UsuarioCliente[20];
+    char ContrasenaCliente[20];
+    int intentos = 3;
+    int autenticado = 0;
+
+    while (intentos > 0 && !autenticado) {
+        printf("Ingrese su usuario: ");
+        scanf("%s", UsuarioCliente);
+
+        printf("Ingrese su contrasena: ");
+        scanf("%s", ContrasenaCliente);
+
+        for (int i = 0; i < NumDeUsuarios; i++) {
+            if (strcmp(usuarios[i].usuario, UsuarioCliente) == 0 &&
+                strcmp(usuarios[i].contrasena, ContrasenaCliente) == 0) {
+
+                usuarioActual = i;
+                SaldoenCuenta = usuarios[i].SaldoAsignado;
+                autenticado = 1;
+
+                printf("Autenticacion exitosa.\n");
+                break;
+            }
+        }
+
+        if (!autenticado) {
+            intentos--;
+            printf("Credenciales incorrectas.\n");
+        }
+    }
+
+    if (!autenticado) {
+        exit(1);
+    }
+}
+
 int main(){
     printf("========== BIENVENIDO AL CAJERO DIGITAL ==========\n");
     return 0;
