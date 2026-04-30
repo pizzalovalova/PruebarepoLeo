@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-//se haran nuevamente las commits de git
+//se haran nuevamente las commits de
 
 float SaldoenCuenta = 0; //saldo inicial del usuario (Cuenta)
 float Deposito; //Cantidad de dinero a depositar
