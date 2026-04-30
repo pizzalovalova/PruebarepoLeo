@@ -27,9 +27,6 @@ Compilar este programa es facil, simplemente debemos de abrir el Command Prompt 
 
 debemos de ejecutar el comando "gcc -o Practica1CajeroDigital.c" y esto nos compilara el programa
 
-INSTRUCCIONES PARA EJECUTARLO
-
-El ejecutarlo es todavia mas simple que el compilarlo. Para poder ejecutarlo, simplemente entramos a la carpeta, buscamos el archivo .exe (que tendra el mismo nombre de nuestro codigo fuente en C) y le damos doble clic y se ejecutara automaticamente.
 
 MEJORA IMPLEMENTADA 
 
