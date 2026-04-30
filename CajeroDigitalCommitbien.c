@@ -77,7 +77,24 @@ void DepositoDin(){
     SaldoenCuenta += Deposito;
     depositos[numDepositos++] = Deposito;
 
+    char respuesta; // para saber si quiere repetir o no el deposito
     printf("Deposito exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
+    printf("Desea realizar otro deposito? (s/n): ");
+    do //funcion para preguntar al usuario si desea realizar otro deposito, si la respuesta es diferente a s o n, se le volvera a preguntar hasta que ingrese una respuesta valida
+    {
+    scanf(" %c", &respuesta);
+    if (respuesta == 's') {
+        printf("cuanto desea depositar? \n");
+        scanf("%f", &Deposito);
+        SaldoenCuenta = SaldoenCuenta + Deposito; //suma la cantidad del deposito con el saldo ya existente
+        depositos[numDepositos++] = Deposito; // registrar deposito
+        printf("Deposito exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
+        printf("Desea realizar otro deposito? (s/n): ");
+        scanf(" %c", &respuesta);
+    }
+    } while (respuesta != 's' && respuesta != 'n');
+    
+ 
 }
 
 void RetiroDin(){
@@ -89,8 +106,27 @@ void RetiroDin(){
         retiros[numRetiros++] = Retiro;
         printf("Retiro exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
     } else {
-        printf("Fondos insuficientes.\n");
+        printf("Fondos insuficientes. No se puede hacer el retiro.\n");
     }
+    char respuesta; // para saber si quiere repetir o no el retiro
+    do //funcion para preguntar al usuario si desea realizar otro retiro, si la respuesta es diferente a s o n, se le volvera a preguntar hasta que ingrese una respuesta valida
+    {
+    printf("Desea realizar otro retiro? (s/n): ");
+    scanf(" %c", &respuesta);
+    if (respuesta == 's') {
+        printf("cuanto desea retirar? \n");
+        scanf("%f", &Retiro);
+        if (Retiro <= SaldoenCuenta) {
+            SaldoenCuenta = SaldoenCuenta - Retiro; // resta la cantidad con el saldo actual
+            retiros[numRetiros++] = Retiro; // registrar retiro
+            printf("Retiro exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
+        } else {
+            printf("Fondos insuficientes para retirar. no se puede hacer el retiro.\n"); // lo mismo que arriba
+        }
+    }
+    } while (respuesta != 's' && respuesta != 'n'); //revisa si el usuario quiere o no realizar otro retiro, si la respuesta es diferente a s o n, se le volvera a preguntar hasta que ingrese una respuesta valida
+
+
 }
 
 void Historial(){
