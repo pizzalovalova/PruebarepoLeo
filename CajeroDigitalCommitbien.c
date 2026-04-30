@@ -6,6 +6,11 @@ float SaldoenCuenta = 0;
 float Deposito;
 float Retiro;
 
+float depositos[100];
+float retiros[100];
+int numDepositos = 0;
+int numRetiros = 0;
+
 struct Usuario{
     char usuario[20];
     char contrasena[20];
@@ -70,6 +75,7 @@ void DepositoDin(){
     scanf("%f", &Deposito);
 
     SaldoenCuenta += Deposito;
+    depositos[numDepositos++] = Deposito;
 
     printf("Deposito exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
 }
@@ -80,6 +86,7 @@ void RetiroDin(){
 
     if (Retiro <= SaldoenCuenta) {
         SaldoenCuenta -= Retiro;
+        retiros[numRetiros++] = Retiro;
         printf("Retiro exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
     } else {
         printf("Fondos insuficientes.\n");
