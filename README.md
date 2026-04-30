@@ -25,7 +25,7 @@ INSTRUCCIONES PARA COMPILAR
 
 Compilar este programa es facil, simplemente debemos de abrir el Command Prompt o el "CMD". Ya estando aqui debemos de ir a la carpeta donde esta el archivo. En este caso, la carpeta es PruebaRepoLeo.
 
-debemos de ejecutar el comando "gcc -o Practica1CajeroDigital.c" y esto nos compilara el programa
+debemos de ejecutar el comando "gcc -o CajeroDigitalcommitbien.c" y esto nos compilara el programa
 
 
 MEJORA IMPLEMENTADA 
