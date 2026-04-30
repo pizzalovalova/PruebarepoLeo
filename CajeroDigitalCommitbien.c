@@ -61,6 +61,19 @@ void autenticacion(){
     }
 }
 
+void SaldoDisponible(){
+    printf("Su saldo disponible es de: %.2f\n", SaldoenCuenta);
+}
+
+void DepositoDin(){
+    printf("Ingrese la cantidad de dinero a depositar: ");
+    scanf("%f", &Deposito);
+
+    SaldoenCuenta += Deposito;
+
+    printf("Deposito exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
+}
+
 int main(){
     printf("========== BIENVENIDO AL CAJERO DIGITAL ==========\n");
     return 0;
