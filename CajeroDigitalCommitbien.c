@@ -93,6 +93,25 @@ void RetiroDin(){
     }
 }
 
+void Historial(){
+    float totalDepositos = 0;
+    float totalRetiros = 0;
+
+    for(int i = 0; i < numDepositos; i++){
+        totalDepositos += depositos[i];
+    }
+
+    for(int i = 0; i < numRetiros; i++){
+        totalRetiros += retiros[i];
+    }
+
+    printf("\n========== HISTORIAL ==========\n");
+    printf("Usuario: %s\n", usuarios[usuarioActual].usuario);
+    printf("Saldo actual: %.2f\n", SaldoenCuenta);
+    printf("Total depositado: %.2f\n", totalDepositos);
+    printf("Total retirado: %.2f\n", totalRetiros);
+}
+
 int main(){
     printf("========== BIENVENIDO AL CAJERO DIGITAL ==========\n");
     return 0;
