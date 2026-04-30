@@ -114,5 +114,40 @@ void Historial(){
 
 int main(){
     printf("========== BIENVENIDO AL CAJERO DIGITAL ==========\n");
+    autenticacion();
+
+    int opcion;
+
+    do{
+        printf("\n1. Consultar saldo\n");
+        printf("2. Depositar\n");
+        printf("3. Retirar\n");
+        printf("4. Historial\n");
+        printf("5. Salir\n");
+
+        scanf("%d", &opcion);
+
+        switch(opcion){
+            case 1:
+                SaldoDisponible();
+                break;
+            case 2:
+                DepositoDin();
+                break;
+            case 3:
+                RetiroDin();
+                break;
+            case 4:
+                Historial();
+                break;
+            case 5:
+                printf("Gracias por usar el cajero.\n");
+                break;
+            default:
+                printf("Opcion invalida.\n");
+        }
+
+    } while(opcion != 5);
+
     return 0;
 }
