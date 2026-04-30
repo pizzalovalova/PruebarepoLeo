@@ -74,6 +74,18 @@ void DepositoDin(){
     printf("Deposito exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
 }
 
+void RetiroDin(){
+    printf("Ingrese la cantidad de dinero a retirar: ");
+    scanf("%f", &Retiro);
+
+    if (Retiro <= SaldoenCuenta) {
+        SaldoenCuenta -= Retiro;
+        printf("Retiro exitoso. Su nuevo saldo es: %.2f\n", SaldoenCuenta);
+    } else {
+        printf("Fondos insuficientes.\n");
+    }
+}
+
 int main(){
     printf("========== BIENVENIDO AL CAJERO DIGITAL ==========\n");
     return 0;
